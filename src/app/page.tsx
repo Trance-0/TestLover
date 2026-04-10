@@ -9,7 +9,7 @@ type Question = {
   options: { label: string; text: string; dimension: string }[];
 };
 
-type Phase = "welcome" | "testing" | "loading" | "result";
+type Phase = "welcome" | "testing" | "loading" | "result" | "bonus-loading" | "bonus";
 
 function shuffleArray<T>(array: T[]): T[] {
   const shuffled = [...array];
@@ -341,6 +341,225 @@ function ResultPage({
   );
 }
 
+function Confetti() {
+  const pieces = useMemo(() => {
+    const colors = ["#7c3aed", "#a78bfa", "#f59e0b", "#10b981", "#ef4444", "#3b82f6", "#ec4899"];
+    return Array.from({ length: 50 }, (_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      delay: Math.random() * 2,
+      duration: 2 + Math.random() * 3,
+      size: 6 + Math.random() * 8,
+      shape: Math.random() > 0.5 ? "circle" : "rect",
+    }));
+  }, []);
+
+  return (
+    <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
+      {pieces.map((p) => (
+        <div
+          key={p.id}
+          className="confetti"
+          style={{
+            left: `${p.left}%`,
+            width: `${p.size}px`,
+            height: p.shape === "rect" ? `${p.size * 1.5}px` : `${p.size}px`,
+            backgroundColor: p.color,
+            borderRadius: p.shape === "circle" ? "50%" : "2px",
+            animationDelay: `${p.delay}s`,
+            animationDuration: `${p.duration}s`,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+function BonusResultPage({
+  matchDegree,
+  onRestart,
+  answers,
+  questions,
+  elapsedSeconds,
+}: {
+  matchDegree: number;
+  onRestart: () => void;
+  answers: Record<number, string>;
+  questions: Question[];
+  elapsedSeconds: number;
+}) {
+  const [showContent, setShowContent] = useState(false);
+  const [detailOpen, setDetailOpen] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowContent(true), 200);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const answeredCount = Object.keys(answers).length;
+
+  const inferences = questions
+    .filter((q) => answers[q.id])
+    .map((q) => {
+      const chosen = q.options.find((o) => o.dimension === answers[q.id]);
+      const stem = q.text.replace(/[：？，。、]+$/g, "").replace(/^你/g, "");
+      return `你是一个在「${stem}」的时候会「${chosen?.text}」的人`;
+    });
+
+  const handleShare = () => {
+    const text = `我完成了全部100道 MBTI 性格测试！人格匹配度 ${matchDegree.toFixed(1)}%！来试试你能做完吗 👉`;
+    const url = `https://test.trance-0.com`;
+    if (navigator.share) {
+      navigator.share({ title: "MBTI 性格测试", text, url }).catch(() => {});
+    } else {
+      navigator.clipboard.writeText(`${text} ${url}`).then(() => {
+        alert("链接已复制到剪贴板！");
+      });
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-[#f5f0ff] to-[#ede9fe] flex flex-col items-center px-5 py-10">
+      <Confetti />
+      {showContent && (
+        <>
+          {/* Header badge */}
+          <div
+            className="animate-fade-in-up mb-6"
+            style={{ animationDelay: "0s" }}
+          >
+            <div className="bg-gradient-to-r from-amber-500 to-orange-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+              隐藏成就解锁！
+            </div>
+          </div>
+
+          {/* Main result card */}
+          <div
+            className="animate-fade-in-up w-full max-w-sm bg-white rounded-3xl shadow-xl p-8 mb-6"
+            style={{ animationDelay: "0.2s" }}
+          >
+            <div className="text-center mb-6">
+              <div className="text-6xl mb-4">🏆</div>
+              <h2 className="text-2xl font-black text-[var(--primary)] mb-2">
+                满分成就
+              </h2>
+              <div className="w-16 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto rounded-full" />
+            </div>
+
+            {/* Match degree display */}
+            <div className="bg-[#f5f0ff] rounded-2xl p-5 mb-6">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-sm text-gray-600">人格匹配度</span>
+                <span className="text-lg font-black text-[var(--primary)]">
+                  {matchDegree.toFixed(1)}%
+                </span>
+              </div>
+              <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-gradient-to-r from-[var(--primary)] to-[var(--primary-light)] rounded-full transition-all duration-1000"
+                  style={{ width: `${matchDegree}%` }}
+                />
+              </div>
+            </div>
+
+            {/* Report text */}
+            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-5 border border-amber-200">
+              <p className="text-lg font-bold text-center text-gray-800 leading-relaxed">
+                「 你是一个特别喜欢做题的人。 」
+              </p>
+            </div>
+          </div>
+
+          {/* Stats */}
+          <div
+            className="animate-fade-in-up w-full max-w-sm grid grid-cols-2 gap-3 mb-4"
+            style={{ animationDelay: "0.4s" }}
+          >
+            <div className="bg-white rounded-2xl p-4 text-center shadow-md">
+              <div className="text-2xl mb-1">⏱️</div>
+              <div className="text-xs text-gray-500">消耗时间</div>
+              <div className="text-lg font-black text-[var(--primary)]">
+                {formatTime(elapsedSeconds)}
+              </div>
+            </div>
+            <div className="bg-white rounded-2xl p-4 text-center shadow-md">
+              <div className="text-2xl mb-1">📝</div>
+              <div className="text-xs text-gray-500">完成题目</div>
+              <div className="text-lg font-black text-[var(--primary)]">
+                {answeredCount}
+              </div>
+            </div>
+          </div>
+
+          {/* Detail dropdown */}
+          <div
+            className="animate-fade-in-up w-full max-w-sm mb-8"
+            style={{ animationDelay: "0.5s" }}
+          >
+            <button
+              onClick={() => setDetailOpen(!detailOpen)}
+              className="w-full bg-white rounded-2xl p-4 shadow-md flex items-center justify-between text-sm font-medium text-gray-700 active:scale-[0.98] transition-transform"
+            >
+              <span>查看详细推论 ({inferences.length}条)</span>
+              <svg
+                className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${detailOpen ? "rotate-180" : ""}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            {detailOpen && (
+              <div className="mt-2 bg-white rounded-2xl shadow-md p-4 max-h-80 overflow-y-auto space-y-2">
+                {inferences.map((text, i) => (
+                  <div
+                    key={i}
+                    className="text-sm text-gray-600 leading-relaxed py-2 border-b border-gray-100 last:border-0"
+                  >
+                    {text}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Share button */}
+          <button
+            onClick={handleShare}
+            className="animate-fade-in-up w-full max-w-sm bg-white border-2 border-[var(--primary)] text-[var(--primary)] py-4 rounded-2xl font-bold text-lg shadow-md active:scale-95 transition-transform mb-3"
+            style={{ animationDelay: "0.6s" }}
+          >
+            分享给好友
+          </button>
+
+          {/* Restart button */}
+          <button
+            onClick={onRestart}
+            className="animate-fade-in-up w-full max-w-sm bg-[var(--primary)] text-white py-4 rounded-2xl font-bold text-lg shadow-lg active:scale-95 transition-transform"
+            style={{ animationDelay: "0.7s" }}
+          >
+            再测一次
+          </button>
+
+          <p
+            className="animate-fade-in-up text-xs text-gray-400 mt-4 text-center"
+            style={{ animationDelay: "0.8s" }}
+          >
+            本测试仅供娱乐，结果不代表专业心理评估
+          </p>
+        </>
+      )}
+    </div>
+  );
+}
+
 export default function Home() {
   const [phase, setPhase] = useState<Phase>("welcome");
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -389,6 +608,12 @@ export default function Home() {
         return next;
       });
 
+      // All 100 answered — auto jump to bonus
+      if (newAnsweredCount >= totalQuestions) {
+        setTimeout(() => setPhase("bonus-loading"), 400);
+        return;
+      }
+
       // Move to next question after a short delay
       const unlocked = newAnsweredCount >= unlockThreshold;
       const maxIndex = unlocked ? totalQuestions - 1 : unlockThreshold - 1;
@@ -400,7 +625,7 @@ export default function Home() {
         setIsTransitioning(false);
       }, 300);
     },
-    [answers, currentIndex]
+    [answers, currentIndex, answeredCount]
   );
 
   const handleSubmit = () => {
@@ -469,10 +694,35 @@ export default function Home() {
     return <LoadingAnimation onComplete={handleLoadingComplete} />;
   }
 
+  // Bonus loading (100 questions done)
+  if (phase === "bonus-loading") {
+    return (
+      <LoadingAnimation
+        onComplete={() => {
+          setEndTime(Date.now());
+          setPhase("bonus");
+        }}
+      />
+    );
+  }
+
   // Result page
   if (phase === "result") {
     return (
       <ResultPage
+        matchDegree={matchDegree}
+        onRestart={handleRestart}
+        answers={answers}
+        questions={questions}
+        elapsedSeconds={Math.round((endTime - startTime) / 1000)}
+      />
+    );
+  }
+
+  // Bonus result page (all 100 done)
+  if (phase === "bonus") {
+    return (
+      <BonusResultPage
         matchDegree={matchDegree}
         onRestart={handleRestart}
         answers={answers}
