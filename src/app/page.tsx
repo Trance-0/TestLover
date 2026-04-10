@@ -593,9 +593,8 @@ export default function Home() {
 
   const handleAnswer = useCallback(
     (questionId: number, dimension: string) => {
-      if (answers[questionId]) return;
-
-      const newAnsweredCount = answeredCount + 1;
+      const isNewAnswer = !answers[questionId];
+      const newAnsweredCount = isNewAnswer ? answeredCount + 1 : answeredCount;
 
       setAnswers((prev) => ({ ...prev, [questionId]: dimension }));
 
@@ -777,11 +776,52 @@ export default function Home() {
 
       {/* Question card area */}
       <div className="flex-1 flex flex-col items-center px-5 pt-6 pb-10">
-        {/* Question number badge */}
-        <div className="mb-4">
+        {/* Prev + Question number + Next */}
+        <div className="w-full max-w-sm flex items-center justify-between mb-4">
+          <button
+            onClick={() => {
+              if (currentIndex > 0 && !isTransitioning) {
+                setIsTransitioning(true);
+                setTimeout(() => {
+                  setCurrentIndex((prev) => prev - 1);
+                  setIsTransitioning(false);
+                }, 150);
+              }
+            }}
+            disabled={currentIndex === 0 || isTransitioning}
+            className="flex items-center gap-1 text-sm font-medium text-gray-600 disabled:text-gray-300 active:scale-95 transition-transform"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            <span>上一题</span>
+          </button>
           <span className="bg-[var(--primary)]/10 text-[var(--primary)] text-xs font-bold px-3 py-1 rounded-full">
             第 {currentIndex + 1} / {displayTotal} 题
           </span>
+          <button
+            onClick={() => {
+              const maxIdx = (canSubmit ? totalQuestions : unlockThreshold) - 1;
+              if (currentIndex < maxIdx && !isTransitioning) {
+                setIsTransitioning(true);
+                setTimeout(() => {
+                  setCurrentIndex((prev) => prev + 1);
+                  setIsTransitioning(false);
+                }, 150);
+              }
+            }}
+            disabled={
+              currentIndex >=
+                (canSubmit ? totalQuestions : unlockThreshold) - 1 ||
+              isTransitioning
+            }
+            className="flex items-center gap-1 text-sm font-medium text-gray-600 disabled:text-gray-300 active:scale-95 transition-transform"
+          >
+            <span>下一题</span>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
 
         {/* Question card */}
@@ -805,13 +845,10 @@ export default function Home() {
                   onClick={() =>
                     handleAnswer(currentQuestion.id, option.dimension)
                   }
-                  disabled={!!answers[currentQuestion.id]}
                   className={`option-btn w-full text-left p-4 rounded-2xl border-2 transition-all ${
                     isSelected
                       ? "border-[var(--primary)] bg-[#f5f0ff] text-[var(--primary)]"
-                      : answers[currentQuestion.id]
-                        ? "border-gray-100 bg-gray-50 text-gray-400"
-                        : "border-gray-200 bg-white text-gray-700 hover:border-[var(--primary-light)] hover:bg-[#faf8ff]"
+                      : "border-gray-200 bg-white text-gray-700 hover:border-[var(--primary-light)] hover:bg-[#faf8ff]"
                   }`}
                 >
                   <div className="flex items-center gap-3">
