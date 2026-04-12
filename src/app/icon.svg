@@ -27,12 +27,12 @@
 
   <!-- 2x2 grid of MBTI dimension letters -->
   <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="900" text-anchor="middle" fill="#ffffff" filter="url(#shadow)">
-    <!-- E / I -->
-    <text x="168" y="220" font-size="128">E</text>
-    <text x="344" y="220" font-size="128" opacity="0.5">I</text>
-    <!-- N / S -->
-    <text x="168" y="400" font-size="128" opacity="0.5">N</text>
-    <text x="344" y="400" font-size="128">S</text>
+    <!-- I / M -->
+    <text x="168" y="220" font-size="128">I</text>
+    <text x="344" y="220" font-size="128" opacity="0.5">M</text>
+    <!-- S / B -->
+    <text x="168" y="400" font-size="128" opacity="0.5">S</text>
+    <text x="344" y="400" font-size="128">B</text>
   </g>
 
   <!-- Center divider cross -->
