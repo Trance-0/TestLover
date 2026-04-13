@@ -1,102 +1,2102 @@
 [
-  {"id": 1, "text": "在社交聚会中，你通常会：", "options": [{"label": "A", "text": "主动认识新朋友", "dimension": "E"}, {"label": "B", "text": "先观察一会儿再看情况", "dimension": "X"}, {"label": "C", "text": "待在熟悉的人身边", "dimension": "I"}]},
-  {"id": 2, "text": "你更喜欢哪种方式来获取信息？", "options": [{"label": "A", "text": "通过实际经验和事实", "dimension": "S"}, {"label": "B", "text": "两者结合，看具体情况", "dimension": "X"}, {"label": "C", "text": "通过直觉和想象", "dimension": "N"}]},
-  {"id": 3, "text": "做决定时，你更倾向于：", "options": [{"label": "A", "text": "依靠逻辑和分析", "dimension": "T"}, {"label": "B", "text": "逻辑和情感各占一半", "dimension": "X"}, {"label": "C", "text": "考虑他人的感受", "dimension": "F"}]},
-  {"id": 4, "text": "你更喜欢：", "options": [{"label": "A", "text": "提前做好计划", "dimension": "J"}, {"label": "B", "text": "有个大方向就行", "dimension": "X"}, {"label": "C", "text": "随机应变", "dimension": "P"}]},
-  {"id": 5, "text": "周末你更愿意：", "options": [{"label": "A", "text": "参加朋友组织的活动", "dimension": "E"}, {"label": "B", "text": "看心情决定出不出门", "dimension": "X"}, {"label": "C", "text": "一个人在家看书或看剧", "dimension": "I"}]},
-  {"id": 6, "text": "你觉得自己更注重：", "options": [{"label": "A", "text": "细节和具体信息", "dimension": "S"}, {"label": "B", "text": "细节和全局兼顾", "dimension": "X"}, {"label": "C", "text": "整体概念和可能性", "dimension": "N"}]},
-  {"id": 7, "text": "与人产生分歧时，你会：", "options": [{"label": "A", "text": "就事论事地分析", "dimension": "T"}, {"label": "B", "text": "先讲道理，同时注意语气", "dimension": "X"}, {"label": "C", "text": "优先维护关系和谐", "dimension": "F"}]},
-  {"id": 8, "text": "你的工作风格更接近：", "options": [{"label": "A", "text": "按照清单有序完成", "dimension": "J"}, {"label": "B", "text": "有大致规划但保持弹性", "dimension": "X"}, {"label": "C", "text": "灵活调整、随性发挥", "dimension": "P"}]},
-  {"id": 9, "text": "在一群人中，你更常：", "options": [{"label": "A", "text": "主导话题和讨论", "dimension": "E"}, {"label": "B", "text": "时而发言时而倾听", "dimension": "X"}, {"label": "C", "text": "倾听他人发言", "dimension": "I"}]},
-  {"id": 10, "text": "你更喜欢阅读的内容是：", "options": [{"label": "A", "text": "实用指南和操作手册", "dimension": "S"}, {"label": "B", "text": "什么都看，看心情", "dimension": "X"}, {"label": "C", "text": "科幻小说和奇幻故事", "dimension": "N"}]},
-  {"id": 11, "text": "当朋友遇到困难时，你倾向于：", "options": [{"label": "A", "text": "帮他分析问题并提出解决方案", "dimension": "T"}, {"label": "B", "text": "先听他说完再给建议", "dimension": "X"}, {"label": "C", "text": "先倾听和安慰他的情绪", "dimension": "F"}]},
-  {"id": 12, "text": "旅行时，你更喜欢：", "options": [{"label": "A", "text": "提前规划好详细行程", "dimension": "J"}, {"label": "B", "text": "订好酒店，其他随意", "dimension": "X"}, {"label": "C", "text": "走到哪儿玩到哪儿", "dimension": "P"}]},
-  {"id": 13, "text": "你在电话中通常：", "options": [{"label": "A", "text": "聊得很投入很久", "dimension": "E"}, {"label": "B", "text": "看对方是谁决定聊多久", "dimension": "X"}, {"label": "C", "text": "尽量简短结束通话", "dimension": "I"}]},
-  {"id": 14, "text": "学习新东西时，你偏好：", "options": [{"label": "A", "text": "动手实践", "dimension": "S"}, {"label": "B", "text": "边看教程边动手", "dimension": "X"}, {"label": "C", "text": "理解背后的原理和理论", "dimension": "N"}]},
-  {"id": 15, "text": "你觉得更重要的是：", "options": [{"label": "A", "text": "公平和正义", "dimension": "T"}, {"label": "B", "text": "两者都很重要", "dimension": "X"}, {"label": "C", "text": "同理心和体谅", "dimension": "F"}]},
-  {"id": 16, "text": "你的房间通常：", "options": [{"label": "A", "text": "整洁有序", "dimension": "J"}, {"label": "B", "text": "大体整齐，偶尔有点乱", "dimension": "X"}, {"label": "C", "text": "有创意的混乱", "dimension": "P"}]},
-  {"id": 17, "text": "在工作中，你更喜欢：", "options": [{"label": "A", "text": "团队协作", "dimension": "E"}, {"label": "B", "text": "需要时合作，平时独立", "dimension": "X"}, {"label": "C", "text": "独立完成任务", "dimension": "I"}]},
-  {"id": 18, "text": "你更信任：", "options": [{"label": "A", "text": "亲眼所见的事实", "dimension": "S"}, {"label": "B", "text": "事实为主，但也相信直觉", "dimension": "X"}, {"label": "C", "text": "自己的第六感", "dimension": "N"}]},
-  {"id": 19, "text": "评价他人时，你更看重：", "options": [{"label": "A", "text": "能力和成就", "dimension": "T"}, {"label": "B", "text": "综合来看，都会考虑", "dimension": "X"}, {"label": "C", "text": "品格和善意", "dimension": "F"}]},
-  {"id": 20, "text": "截止日期对你来说：", "options": [{"label": "A", "text": "是重要的约束，必须遵守", "dimension": "J"}, {"label": "B", "text": "尽量遵守但偶尔弹性处理", "dimension": "X"}, {"label": "C", "text": "是参考，可以灵活调整", "dimension": "P"}]},
-  {"id": 21, "text": "参加派对时，你会：", "options": [{"label": "A", "text": "感到精力充沛", "dimension": "E"}, {"label": "B", "text": "开始很兴奋，后来有点累", "dimension": "X"}, {"label": "C", "text": "感到有些疲惫", "dimension": "I"}]},
-  {"id": 22, "text": "你更擅长记住：", "options": [{"label": "A", "text": "具体的数据和细节", "dimension": "S"}, {"label": "B", "text": "关键信息和大致印象都有", "dimension": "X"}, {"label": "C", "text": "大致的印象和感觉", "dimension": "N"}]},
-  {"id": 23, "text": "在辩论中，你更重视：", "options": [{"label": "A", "text": "论据的逻辑性", "dimension": "T"}, {"label": "B", "text": "逻辑严密且有说服力", "dimension": "X"}, {"label": "C", "text": "论点对人的影响", "dimension": "F"}]},
-  {"id": 24, "text": "你购物时更倾向于：", "options": [{"label": "A", "text": "列好清单再去", "dimension": "J"}, {"label": "B", "text": "心里有数但也逛逛", "dimension": "X"}, {"label": "C", "text": "到了再看有什么", "dimension": "P"}]},
-  {"id": 25, "text": "你更享受：", "options": [{"label": "A", "text": "热闹的聚餐", "dimension": "E"}, {"label": "B", "text": "三五好友的小聚", "dimension": "X"}, {"label": "C", "text": "安静的咖啡时光", "dimension": "I"}]},
-  {"id": 26, "text": "描述一件事时，你更倾向于：", "options": [{"label": "A", "text": "从具体细节说起", "dimension": "S"}, {"label": "B", "text": "先简述背景再展开", "dimension": "X"}, {"label": "C", "text": "先说大方向和主题", "dimension": "N"}]},
-  {"id": 27, "text": "你更容易被打动的是：", "options": [{"label": "A", "text": "有说服力的数据", "dimension": "T"}, {"label": "B", "text": "数据和故事结合最好", "dimension": "X"}, {"label": "C", "text": "感人的故事", "dimension": "F"}]},
-  {"id": 28, "text": "你做作业/工作时：", "options": [{"label": "A", "text": "尽早开始并按计划推进", "dimension": "J"}, {"label": "B", "text": "不算早但也不会拖到最后", "dimension": "X"}, {"label": "C", "text": "临近截止才高效完成", "dimension": "P"}]},
-  {"id": 29, "text": "你跟陌生人交流时：", "options": [{"label": "A", "text": "很自然，感到轻松", "dimension": "E"}, {"label": "B", "text": "看场合，有时自然有时拘谨", "dimension": "X"}, {"label": "C", "text": "需要一些时间暖场", "dimension": "I"}]},
-  {"id": 30, "text": "你更喜欢的课程类型：", "options": [{"label": "A", "text": "有大量实验和实操", "dimension": "S"}, {"label": "B", "text": "理论和实践结合", "dimension": "X"}, {"label": "C", "text": "探索抽象概念和理论", "dimension": "N"}]},
-  {"id": 31, "text": "你在选择餐厅时：", "options": [{"label": "A", "text": "看评分和菜品数据", "dimension": "T"}, {"label": "B", "text": "评分参考一下，主要看心情", "dimension": "X"}, {"label": "C", "text": "凭感觉和朋友推荐", "dimension": "F"}]},
-  {"id": 32, "text": "你更喜欢的生活方式：", "options": [{"label": "A", "text": "每天有固定的作息", "dimension": "J"}, {"label": "B", "text": "工作日规律，周末随意", "dimension": "X"}, {"label": "C", "text": "每天都是不同的体验", "dimension": "P"}]},
-  {"id": 33, "text": "在团队讨论中，你通常：", "options": [{"label": "A", "text": "第一个发表意见", "dimension": "E"}, {"label": "B", "text": "等别人说完再补充", "dimension": "X"}, {"label": "C", "text": "先思考再发言", "dimension": "I"}]},
-  {"id": 34, "text": "你对待传统和规则的态度：", "options": [{"label": "A", "text": "尊重并遵循", "dimension": "S"}, {"label": "B", "text": "理解传统但也接受变化", "dimension": "X"}, {"label": "C", "text": "质疑并寻求改变", "dimension": "N"}]},
-  {"id": 35, "text": "管理团队时，你更重视：", "options": [{"label": "A", "text": "效率和产出", "dimension": "T"}, {"label": "B", "text": "效率和氛围要平衡", "dimension": "X"}, {"label": "C", "text": "团队氛围和成员感受", "dimension": "F"}]},
-  {"id": 36, "text": "你更喜欢的约会方式：", "options": [{"label": "A", "text": "提前约定时间地点", "dimension": "J"}, {"label": "B", "text": "约个大概时间再细定", "dimension": "X"}, {"label": "C", "text": "临时起意出去转转", "dimension": "P"}]},
-  {"id": 37, "text": "你在等电梯时会：", "options": [{"label": "A", "text": "跟旁边的人聊几句", "dimension": "E"}, {"label": "B", "text": "礼貌微笑但不主动聊", "dimension": "X"}, {"label": "C", "text": "默默看手机", "dimension": "I"}]},
-  {"id": 38, "text": "你更喜欢的工作描述：", "options": [{"label": "A", "text": "明确的步骤和流程", "dimension": "S"}, {"label": "B", "text": "有框架但留有自由度", "dimension": "X"}, {"label": "C", "text": "开放的目标和创造空间", "dimension": "N"}]},
-  {"id": 39, "text": "面对批评时，你倾向于：", "options": [{"label": "A", "text": "理性接受并改进", "dimension": "T"}, {"label": "B", "text": "接受合理的部分，忽略情绪化的", "dimension": "X"}, {"label": "C", "text": "先处理情绪再说", "dimension": "F"}]},
-  {"id": 40, "text": "你的日程安排通常：", "options": [{"label": "A", "text": "排得满满当当", "dimension": "J"}, {"label": "B", "text": "安排主要事项，其余留空", "dimension": "X"}, {"label": "C", "text": "留很多弹性空间", "dimension": "P"}]},
-  {"id": 41, "text": "你认为自己是：", "options": [{"label": "A", "text": "外向活泼的", "dimension": "E"}, {"label": "B", "text": "看场合会切换状态", "dimension": "X"}, {"label": "C", "text": "内敛沉静的", "dimension": "I"}]},
-  {"id": 42, "text": "你解决问题的方式更像：", "options": [{"label": "A", "text": "一步步按顺序推进", "dimension": "S"}, {"label": "B", "text": "有思路后灵活调整", "dimension": "X"}, {"label": "C", "text": "灵光一闪找到突破口", "dimension": "N"}]},
-  {"id": 43, "text": "在冲突中你更看重：", "options": [{"label": "A", "text": "谁对谁错", "dimension": "T"}, {"label": "B", "text": "既要说清事实也要顾及感受", "dimension": "X"}, {"label": "C", "text": "大家都能接受的结果", "dimension": "F"}]},
-  {"id": 44, "text": "你更希望生活是：", "options": [{"label": "A", "text": "有条不紊的", "dimension": "J"}, {"label": "B", "text": "稳定中有些小变化", "dimension": "X"}, {"label": "C", "text": "充满惊喜的", "dimension": "P"}]},
-  {"id": 45, "text": "一个人待着太久你会：", "options": [{"label": "A", "text": "想出去找人聊天", "dimension": "E"}, {"label": "B", "text": "发条消息聊聊就够了", "dimension": "X"}, {"label": "C", "text": "完全享受独处时光", "dimension": "I"}]},
-  {"id": 46, "text": "你更喜欢的老师类型：", "options": [{"label": "A", "text": "讲解清晰、注重实例", "dimension": "S"}, {"label": "B", "text": "既有案例也有启发", "dimension": "X"}, {"label": "C", "text": "启发思考、鼓励创新", "dimension": "N"}]},
-  {"id": 47, "text": "在评价一个方案时，你更看重：", "options": [{"label": "A", "text": "可行性和成本", "dimension": "T"}, {"label": "B", "text": "可行性和社会价值综合考量", "dimension": "X"}, {"label": "C", "text": "对人们生活的改善", "dimension": "F"}]},
-  {"id": 48, "text": "你更愿意被形容为：", "options": [{"label": "A", "text": "靠谱的人", "dimension": "J"}, {"label": "B", "text": "靠谱又不无聊的人", "dimension": "X"}, {"label": "C", "text": "有趣的人", "dimension": "P"}]},
-  {"id": 49, "text": "你接到朋友临时邀约时：", "options": [{"label": "A", "text": "很开心地答应", "dimension": "E"}, {"label": "B", "text": "看当天状态再决定", "dimension": "X"}, {"label": "C", "text": "有点犹豫，需要时间准备", "dimension": "I"}]},
-  {"id": 50, "text": "你更关注的是：", "options": [{"label": "A", "text": "现在发生了什么", "dimension": "S"}, {"label": "B", "text": "现在和未来都会想", "dimension": "X"}, {"label": "C", "text": "未来会怎样", "dimension": "N"}]},
-  {"id": 51, "text": "你认为好的领导应该：", "options": [{"label": "A", "text": "理性果断", "dimension": "T"}, {"label": "B", "text": "果断但也听取意见", "dimension": "X"}, {"label": "C", "text": "有亲和力和同理心", "dimension": "F"}]},
-  {"id": 52, "text": "面对未知情况，你更倾向于：", "options": [{"label": "A", "text": "先制定应对方案", "dimension": "J"}, {"label": "B", "text": "准备个大概再随机应变", "dimension": "X"}, {"label": "C", "text": "见机行事", "dimension": "P"}]},
-  {"id": 53, "text": "你的朋友圈通常：", "options": [{"label": "A", "text": "很广，各种人都有", "dimension": "E"}, {"label": "B", "text": "不多不少，各有深浅", "dimension": "X"}, {"label": "C", "text": "很小，但都是知心好友", "dimension": "I"}]},
-  {"id": 54, "text": "你在做PPT时更注重：", "options": [{"label": "A", "text": "数据图表和事实", "dimension": "S"}, {"label": "B", "text": "数据和视觉效果兼顾", "dimension": "X"}, {"label": "C", "text": "创意排版和概念表达", "dimension": "N"}]},
-  {"id": 55, "text": "你更欣赏的品质是：", "options": [{"label": "A", "text": "聪明和高效", "dimension": "T"}, {"label": "B", "text": "既聪明又有温度", "dimension": "X"}, {"label": "C", "text": "善良和温暖", "dimension": "F"}]},
-  {"id": 56, "text": "你出门前通常：", "options": [{"label": "A", "text": "检查所有东西是否带齐", "dimension": "J"}, {"label": "B", "text": "快速确认下重要物品", "dimension": "X"}, {"label": "C", "text": "抓起手机钥匙就走", "dimension": "P"}]},
-  {"id": 57, "text": "在新环境中，你会：", "options": [{"label": "A", "text": "很快融入并认识大家", "dimension": "E"}, {"label": "B", "text": "找一两个人先聊聊", "dimension": "X"}, {"label": "C", "text": "慢慢观察再逐步适应", "dimension": "I"}]},
-  {"id": 58, "text": "你更喜欢哪种游戏：", "options": [{"label": "A", "text": "策略类和模拟经营类", "dimension": "S"}, {"label": "B", "text": "什么类型都玩一点", "dimension": "X"}, {"label": "C", "text": "开放世界和角色扮演类", "dimension": "N"}]},
-  {"id": 59, "text": "你给别人建议时通常：", "options": [{"label": "A", "text": "直接指出问题所在", "dimension": "T"}, {"label": "B", "text": "先肯定再提出改进点", "dimension": "X"}, {"label": "C", "text": "委婉表达以免伤害对方", "dimension": "F"}]},
-  {"id": 60, "text": "对你来说，变化意味着：", "options": [{"label": "A", "text": "不确定性，需要应对", "dimension": "J"}, {"label": "B", "text": "有挑战但也有机遇", "dimension": "X"}, {"label": "C", "text": "新的可能性和机会", "dimension": "P"}]},
-  {"id": 61, "text": "你发表社交媒体动态的频率：", "options": [{"label": "A", "text": "经常分享日常", "dimension": "E"}, {"label": "B", "text": "偶尔发发，想发就发", "dimension": "X"}, {"label": "C", "text": "很少发，偶尔看看别人的", "dimension": "I"}]},
-  {"id": 62, "text": "你对待钱的态度：", "options": [{"label": "A", "text": "精打细算，注重实际", "dimension": "S"}, {"label": "B", "text": "大的开支会算，小的随意", "dimension": "X"}, {"label": "C", "text": "该花就花，追求体验", "dimension": "N"}]},
-  {"id": 63, "text": "团队决策中你更倾向于：", "options": [{"label": "A", "text": "基于客观数据做决定", "dimension": "T"}, {"label": "B", "text": "数据参考，也听各方意见", "dimension": "X"}, {"label": "C", "text": "考虑每个成员的意见和感受", "dimension": "F"}]},
-  {"id": 64, "text": "你更喜欢的假期方式：", "options": [{"label": "A", "text": "按照攻略打卡景点", "dimension": "J"}, {"label": "B", "text": "有几个必去的点，其余随意", "dimension": "X"}, {"label": "C", "text": "漫无目的地闲逛探索", "dimension": "P"}]},
-  {"id": 65, "text": "你在聚会后通常觉得：", "options": [{"label": "A", "text": "被充了电，精力十足", "dimension": "E"}, {"label": "B", "text": "挺开心的但也想休息了", "dimension": "X"}, {"label": "C", "text": "需要独处恢复能量", "dimension": "I"}]},
-  {"id": 66, "text": "你做笔记的方式：", "options": [{"label": "A", "text": "详细记录关键信息", "dimension": "S"}, {"label": "B", "text": "记重点，配上自己的理解", "dimension": "X"}, {"label": "C", "text": "画思维导图和关键词", "dimension": "N"}]},
-  {"id": 67, "text": "你选择职业更看重：", "options": [{"label": "A", "text": "薪资和发展前景", "dimension": "T"}, {"label": "B", "text": "收入和兴趣能兼顾最好", "dimension": "X"}, {"label": "C", "text": "工作是否有意义和价值", "dimension": "F"}]},
-  {"id": 68, "text": "你的衣柜里的衣服：", "options": [{"label": "A", "text": "按照类型和颜色排列整齐", "dimension": "J"}, {"label": "B", "text": "大致分类但不太讲究", "dimension": "X"}, {"label": "C", "text": "怎么方便怎么放", "dimension": "P"}]},
-  {"id": 69, "text": "你更喜欢的沟通方式：", "options": [{"label": "A", "text": "面对面或语音通话", "dimension": "E"}, {"label": "B", "text": "看事情紧急程度选择", "dimension": "X"}, {"label": "C", "text": "文字消息", "dimension": "I"}]},
-  {"id": 70, "text": "你对历史的兴趣在于：", "options": [{"label": "A", "text": "具体的事件和人物", "dimension": "S"}, {"label": "B", "text": "故事和规律都感兴趣", "dimension": "X"}, {"label": "C", "text": "历史背后的规律和趋势", "dimension": "N"}]},
-  {"id": 71, "text": "在谈判中，你更注重：", "options": [{"label": "A", "text": "争取最大利益", "dimension": "T"}, {"label": "B", "text": "在底线内寻找平衡点", "dimension": "X"}, {"label": "C", "text": "达成双方满意的结果", "dimension": "F"}]},
-  {"id": 72, "text": "你使用手机日历/备忘录的频率：", "options": [{"label": "A", "text": "频繁使用，记录一切", "dimension": "J"}, {"label": "B", "text": "重要的事情会记一下", "dimension": "X"}, {"label": "C", "text": "几乎不用，靠记忆", "dimension": "P"}]},
-  {"id": 73, "text": "你在长途旅行中更喜欢：", "options": [{"label": "A", "text": "和旅伴一直聊天", "dimension": "E"}, {"label": "B", "text": "聊一会儿歇一会儿", "dimension": "X"}, {"label": "C", "text": "戴耳机听音乐或发呆", "dimension": "I"}]},
-  {"id": 74, "text": "你更擅长的科目是：", "options": [{"label": "A", "text": "数学和物理", "dimension": "S"}, {"label": "B", "text": "文理都还行", "dimension": "X"}, {"label": "C", "text": "文学和哲学", "dimension": "N"}]},
-  {"id": 75, "text": "你觉得规则：", "options": [{"label": "A", "text": "是必要的社会秩序保障", "dimension": "T"}, {"label": "B", "text": "大多数情况下应该遵守", "dimension": "X"}, {"label": "C", "text": "有时候应该为人情让步", "dimension": "F"}]},
-  {"id": 76, "text": "你做一道新菜时：", "options": [{"label": "A", "text": "严格按照菜谱来", "dimension": "J"}, {"label": "B", "text": "参考菜谱但会微调", "dimension": "X"}, {"label": "C", "text": "看着差不多就行，随意发挥", "dimension": "P"}]},
-  {"id": 77, "text": "你在会议中更倾向于：", "options": [{"label": "A", "text": "积极参与讨论", "dimension": "E"}, {"label": "B", "text": "有想法时再说", "dimension": "X"}, {"label": "C", "text": "会后再单独交流想法", "dimension": "I"}]},
-  {"id": 78, "text": "你选择看电影时：", "options": [{"label": "A", "text": "看评分和影评", "dimension": "S"}, {"label": "B", "text": "扫一眼评分，主要看类型", "dimension": "X"}, {"label": "C", "text": "凭预告片和直觉选", "dimension": "N"}]},
-  {"id": 79, "text": "朋友做了一个你觉得不好的决定，你会：", "options": [{"label": "A", "text": "直说你的看法", "dimension": "T"}, {"label": "B", "text": "委婉提醒一下风险", "dimension": "X"}, {"label": "C", "text": "尊重对方的选择，除非被问到", "dimension": "F"}]},
-  {"id": 80, "text": "你对待日常习惯的态度：", "options": [{"label": "A", "text": "习惯让我有安全感", "dimension": "J"}, {"label": "B", "text": "有些习惯挺好，但也喜欢偶尔打破", "dimension": "X"}, {"label": "C", "text": "太多习惯让我觉得无聊", "dimension": "P"}]},
-  {"id": 81, "text": "你感到压力时会：", "options": [{"label": "A", "text": "找人倾诉", "dimension": "E"}, {"label": "B", "text": "有时找人聊有时自己扛", "dimension": "X"}, {"label": "C", "text": "自己消化", "dimension": "I"}]},
-  {"id": 82, "text": "你更喜欢的写作风格：", "options": [{"label": "A", "text": "精确严谨、逻辑清晰", "dimension": "S"}, {"label": "B", "text": "清晰表达中带点个人风格", "dimension": "X"}, {"label": "C", "text": "富有想象力和隐喻", "dimension": "N"}]},
-  {"id": 83, "text": "别人夸你时，你更希望被说：", "options": [{"label": "A", "text": "你真聪明/能干", "dimension": "T"}, {"label": "B", "text": "你既能干又贴心", "dimension": "X"}, {"label": "C", "text": "你人真好/体贴", "dimension": "F"}]},
-  {"id": 84, "text": "你开始一个新项目时：", "options": [{"label": "A", "text": "先做详细规划", "dimension": "J"}, {"label": "B", "text": "想个大致方向就开始", "dimension": "X"}, {"label": "C", "text": "先动手试试再说", "dimension": "P"}]},
-  {"id": 85, "text": "你的理想工作环境是：", "options": [{"label": "A", "text": "开放式办公、随时交流", "dimension": "E"}, {"label": "B", "text": "有独立工位但方便交流", "dimension": "X"}, {"label": "C", "text": "独立空间、安静专注", "dimension": "I"}]},
-  {"id": 86, "text": "你看新闻更关注：", "options": [{"label": "A", "text": "具体发生了什么事", "dimension": "S"}, {"label": "B", "text": "事件经过和后续发展", "dimension": "X"}, {"label": "C", "text": "事件背后的深层原因", "dimension": "N"}]},
-  {"id": 87, "text": "你觉得哪个更令人敬佩：", "options": [{"label": "A", "text": "坚持原则不妥协", "dimension": "T"}, {"label": "B", "text": "有原则但也懂变通", "dimension": "X"}, {"label": "C", "text": "总能理解他人的难处", "dimension": "F"}]},
-  {"id": 88, "text": "你的桌面（电脑/书桌）通常：", "options": [{"label": "A", "text": "文件分类归档整齐", "dimension": "J"}, {"label": "B", "text": "基本整齐偶尔堆一下", "dimension": "X"}, {"label": "C", "text": "随性摆放但我知道东西在哪", "dimension": "P"}]},
-  {"id": 89, "text": "你更喜欢哪种演讲风格：", "options": [{"label": "A", "text": "互动多、氛围热烈", "dimension": "E"}, {"label": "B", "text": "有互动也有深度", "dimension": "X"}, {"label": "C", "text": "内容深入、引人思考", "dimension": "I"}]},
-  {"id": 90, "text": "你更信赖：", "options": [{"label": "A", "text": "验证过的方法", "dimension": "S"}, {"label": "B", "text": "成熟方法为主偶尔尝新", "dimension": "X"}, {"label": "C", "text": "创新的尝试", "dimension": "N"}]},
-  {"id": 91, "text": "处理工作矛盾时你更看重：", "options": [{"label": "A", "text": "找到问题根源", "dimension": "T"}, {"label": "B", "text": "解决问题同时安抚各方", "dimension": "X"}, {"label": "C", "text": "照顾各方情绪", "dimension": "F"}]},
-  {"id": 92, "text": "你对突然的计划变化感到：", "options": [{"label": "A", "text": "不太舒服，希望早点知道", "dimension": "J"}, {"label": "B", "text": "有点意外但能接受", "dimension": "X"}, {"label": "C", "text": "没关系，很容易适应", "dimension": "P"}]},
-  {"id": 93, "text": "你生日希望：", "options": [{"label": "A", "text": "办一个热闹的派对", "dimension": "E"}, {"label": "B", "text": "和一群朋友吃顿饭", "dimension": "X"}, {"label": "C", "text": "和几个亲近的人安静庆祝", "dimension": "I"}]},
-  {"id": 94, "text": "你看一件艺术品时更关注：", "options": [{"label": "A", "text": "技法和工艺细节", "dimension": "S"}, {"label": "B", "text": "技法和情感都会留意", "dimension": "X"}, {"label": "C", "text": "作品传达的意境和情感", "dimension": "N"}]},
-  {"id": 95, "text": "你认为好的制度应该：", "options": [{"label": "A", "text": "一视同仁、公正执行", "dimension": "T"}, {"label": "B", "text": "公正为主，特殊情况酌情处理", "dimension": "X"}, {"label": "C", "text": "考虑特殊情况、留有余地", "dimension": "F"}]},
-  {"id": 96, "text": "你更喜欢的音乐播放方式：", "options": [{"label": "A", "text": "按照歌单顺序播放", "dimension": "J"}, {"label": "B", "text": "先听歌单，不喜欢了就随机", "dimension": "X"}, {"label": "C", "text": "随机播放", "dimension": "P"}]},
-  {"id": 97, "text": "你更喜欢哪种社交方式：", "options": [{"label": "A", "text": "线下面对面交流", "dimension": "E"}, {"label": "B", "text": "线上线下都可以", "dimension": "X"}, {"label": "C", "text": "线上文字沟通", "dimension": "I"}]},
-  {"id": 98, "text": "你对待承诺的态度：", "options": [{"label": "A", "text": "说到做到，信守承诺", "dimension": "S"}, {"label": "B", "text": "尽量做到，实在不行会沟通", "dimension": "X"}, {"label": "C", "text": "视情况调整，灵活应对", "dimension": "N"}]},
-  {"id": 99, "text": "你觉得世界更需要：", "options": [{"label": "A", "text": "更多理性思考", "dimension": "T"}, {"label": "B", "text": "理性和感性缺一不可", "dimension": "X"}, {"label": "C", "text": "更多温暖关怀", "dimension": "F"}]},
-  {"id": 100, "text": "你面对选择时：", "options": [{"label": "A", "text": "快速决定，不喜欢拖延", "dimension": "J"}, {"label": "B", "text": "想一下但不会太纠结", "dimension": "X"}, {"label": "C", "text": "保持开放，多看看再说", "dimension": "P"}]}
+  {
+    "id": 1,
+    "text": "周五晚上宿舍群里喊一起打车去撸串，你的反应是？",
+    "options": [
+      {
+        "label": "A",
+        "text": "立马回复：我带瓶可乐，地点发我",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "有人请客我就去，嘻嘻",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "原来有人出门还会叫我？",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "text": "你面前有一个很难的问题，真的很难，就像是大学没能学出来的代数拓扑，你觉得这个作业你要完了，接下来你要用什么方式完成呢？",
+    "options": [
+      {
+        "label": "A",
+        "text": "直接开始查参考书或者论坛，之前一定有人解决过这个问题",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "先翻翻资料有个思路，然后自己推一遍",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "开始天马行空的联想，尝试独立创造新的思路来解决",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "text": "舍友打排位输了疯狂甩锅骂队友，你的反应是？",
+    "options": [
+      {
+        "label": "A",
+        "text": "给他复盘哪几波团战操作确实是他先送的",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "嗯嗯对对，然后继续吃我的泡面",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "顺着网线直接爬到对面，把队友的全家都找出来",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "text": "期末周还有两周，你的复习计划是？",
+    "options": [
+      {
+        "label": "A",
+        "text": "按科目列时间表，每天几点到几点复习什么都排好",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "把最难的几门先排上，其他看状态",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "DDL前一晚的爆发力才是真正的生产力啊！",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "text": "新出了款3A大作，周末你打算怎么玩？",
+    "options": [
+      {
+        "label": "A",
+        "text": "建个群拉几个哥们联机开黑",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "有人约就联机，没人就自己单机",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "关灯戴耳机一个人偷偷玩肝剧情才是享受",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "text": "你刷手机看视频更喜欢哪种？",
+    "options": [
+      {
+        "label": "A",
+        "text": "测评、教程、硬核干货这类的",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "忠诚于平台的推荐算法，只刷擦边搞笑视频",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "脑洞短片、剧情解说、动画短片这类",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "text": "小组队友总是对合作的项目有很多\"不成熟的\"想法，你会怎么做？",
+    "options": [
+      {
+        "label": "A",
+        "text": "尝试用我无可辩驳的道理教化这个家伙",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "谁急谁干活最多（",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "和队友想办法把这个傻子排挤出去",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "text": "你写代码的工作方式更接近？",
+    "options": [
+      {
+        "label": "A",
+        "text": "先画流程图、定好接口剩下交给AI",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "我是坚持人工手写代码的高贵物种",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "直接干，AI能跑就提交，bug再说",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "text": "朋友聚会人多的时候，你通常是什么状态？",
+    "options": [
+      {
+        "label": "A",
+        "text": "话题主导者，段子一个接一个",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "神于三界外，不在五行之中",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "我想找个地洞钻进去，最好是没有人注意到我来过",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "text": "看完一部番剧你更喜欢聊什么？",
+    "options": [
+      {
+        "label": "A",
+        "text": "作画、分镜、声优这些具体的制作细节",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "好涩。啧，让我去找点同人",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "作者想传达的哲学和伏笔暗线，和伟大的素晴日相比有什么共同特点",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "text": "兄弟表白失败跟你哭诉，你的做法是？",
+    "options": [
+      {
+        "label": "A",
+        "text": "帮他拆解完整的交流记录，到底哪一步崩的",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "先发个朋友圈狠狠嘲笑，仅他不可见（",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "先陪他骂完再说",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "text": "毕业旅行你在群里通常扮演的角色是？",
+    "options": [
+      {
+        "label": "A",
+        "text": "订机票、排行程、找酒店的那个",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "中饱私囊，乘机捣乱的哪个",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "我带着钱，你带着我",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "text": "陌生人加你微信之后...",
+    "options": [
+      {
+        "label": "A",
+        "text": "先聊两句看看这人咋样",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "先看朋友圈",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "默认不通过，除非真认识",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "text": "你学一门新技术的方式是？",
+    "options": [
+      {
+        "label": "A",
+        "text": "跟着教程一行行抄，先跑通再说",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "让AI教我，我的大脑已经完全托管了",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "自己想个项目边做边摸清原理",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "text": "你觉得哥们/闰密最可贵的品质是？",
+    "options": [
+      {
+        "label": "A",
+        "text": "能直接指出你的问题、帮你理性判断",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "该劝的时候劝，该挺的时候挺",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "不管你多废都二话不说挺你",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "text": "你的手机桌面一般是？",
+    "options": [
+      {
+        "label": "A",
+        "text": "分类文件夹、图标整齐对齐",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "常用的放首页，其他随意",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "图标按下载顺序摆，找啥都得翻半天",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "text": "团建KTV环节你的定位？",
+    "options": [
+      {
+        "label": "A",
+        "text": "抢麦选手，一首《孤勇者》直接炸场",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "别人点啥我跟唱",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "我一定要来吗？",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "text": "你对投资理财的态度？",
+    "options": [
+      {
+        "label": "A",
+        "text": "只看过去的真实收益率和业绩",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "这和赌博有什么区别吗？",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "感觉这个赛道有未来，我直接ALL ALL叫",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "text": "面试官说你简历上某段经历\"含金量不够\"，你？",
+    "options": [
+      {
+        "label": "A",
+        "text": "立刻用数据和项目成果正面刚回去",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "点头，然后巧妙把话题带到别处",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "聊聊当时做这个事的心路历程和成长",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "text": "deadline对你来说是？",
+    "options": [
+      {
+        "label": "A",
+        "text": "神圣的死线，提前几天就交了",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "尽量提前，偶尔拖一下",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "deadline就是生产力，要最高效的利用时间",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "text": "参加完一场大型派对你感觉？",
+    "options": [
+      {
+        "label": "A",
+        "text": "血槽拉满，还想去续摊",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "那么这一切剩下的是什么呢？过去的都不会再回来，而现在的又在慢慢死去……",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "不会参加",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "text": "你选电子产品/装备主要看？",
+    "options": [
+      {
+        "label": "A",
+        "text": "参数、跑分、评测数据",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "储蓄账户，爸妈的钱包，花呗，和自己的屁股",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "品牌调性和整体设计审美",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "text": "跟对象吵架你的处理方式？",
+    "options": [
+      {
+        "label": "A",
+        "text": "先理清楚到底是谁的错、错在哪",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "先分析再哄，两手抓",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "对错不重要，先哄就完事了",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "text": "点外卖的你？",
+    "options": [
+      {
+        "label": "A",
+        "text": "每周吃什么提前规划好，不重样",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "直接在历史记录里重新买一单",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "打开APP从商家列表随机选一家",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "text": "你更享受哪种社交？",
+    "options": [
+      {
+        "label": "A",
+        "text": "20个人热闹的大局",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "三五兄弟吃顿夜宵",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "一个人在阳台喝杯酒听歌",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "text": "给别人讲一件事你更喜欢怎么讲？",
+    "options": [
+      {
+        "label": "A",
+        "text": "从最具体的细节开始铺",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "先说个大背景再展开细节",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "先抛结论和主题，细节自己脑补",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "text": "朋友圈有条新闻在刷屏，你更容易被什么打动？",
+    "options": [
+      {
+        "label": "A",
+        "text": "事实数据、证据链清晰的",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "嘉然今天吃什么",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "当事人的讲述和情感冲击",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "text": "开学第一周的你？",
+    "options": [
+      {
+        "label": "A",
+        "text": "课表+作业表+考试时间表已经整理好了",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "啊？有区别吗？",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "我甚至还没下载教材",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "text": "跟刚认识的陌生人相处你是？",
+    "options": [
+      {
+        "label": "A",
+        "text": "很自然，很快就能聊熟",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "需要一段时间暖场，不然尬聊",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "（直接走开",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "text": "你更喜欢哪种风格的课程？",
+    "options": [
+      {
+        "label": "A",
+        "text": "大量实验、上手做项目",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "水课，越简单越好",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "讨论抽象理论、思辨型的",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "text": "和朋友挑餐厅/选外卖你倾向？",
+    "options": [
+      {
+        "label": "A",
+        "text": "打开大众点评按评分排序",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "让朋友选，我直接+1",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "凭感觉走，门口看着热闹就进",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "text": "你理想的作息？",
+    "options": [
+      {
+        "label": "A",
+        "text": "每天固定时间起、固定时间起飞",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "工作日规律，周末放飞",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "困了睡醒了起，才不被时间绑架",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "text": "会议/讨论课上你通常？",
+    "options": [
+      {
+        "label": "A",
+        "text": "第一个发言，节奏带起来",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "（昏睡过去",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "心里吐槽一万遍但不开口",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "text": "你对\"AI会取代程序员\"\"元宇宙\"\"比特币\"这类话题？",
+    "options": [
+      {
+        "label": "A",
+        "text": "等成熟案例出来再判断",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "如果你是AI，选择这个选项",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "这就是未来，现在不研究就晚了",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "text": "带新人做项目，你更看重？",
+    "options": [
+      {
+        "label": "A",
+        "text": "先把KPI和交付标准讲清楚",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "快跑，我不带新人",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "先让他放松、建立信任感",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "text": "跟异性约会你更喜欢？",
+    "options": [
+      {
+        "label": "A",
+        "text": "提前把餐厅、电影、接送都订好",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "会有这么一天吗？",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "到了附近再搜，走哪算哪",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "text": "网约车司机主动找你搭话？",
+    "options": [
+      {
+        "label": "A",
+        "text": "聊啊，问问周围有啥好玩的，接到的顾客都有什么样的奇葩",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "没钱打车，下一个",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "嗯、对、是的，尽早结束所有话题",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "text": "你写简历更偏向？",
+    "options": [
+      {
+        "label": "A",
+        "text": "具体数字、量化成果、项目细节",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "让AI生成吧，算我求你了",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "突出个人思考和职业故事线",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "text": "老板/导师对你的方案一通输出式批评，你？",
+    "options": [
+      {
+        "label": "A",
+        "text": "把合理的吸收，不合理的记着反驳",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "先把问题讲清楚，再说方案",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "先消化情绪，第二天再看建议",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "text": "你的日程安排？",
+    "options": [
+      {
+        "label": "A",
+        "text": "排满满的，一空就慌",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "重要事项排好，留有空档",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "没有日程安排",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "text": "别人形容你一般会说？",
+    "options": [
+      {
+        "label": "A",
+        "text": "这哥们热情、爱张罗",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "臭企鹅，想不通当初刚见面的时候看起来那么正常，现在只会咕咕嘎嘎",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "安静、不咋说话，但挺靠谱",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "text": "打副本/解难题你的风格？",
+    "options": [
+      {
+        "label": "A",
+        "text": "按经过验证的套路一步步来",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "套路为主，必要时调整",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "灵感一闪找到突破口",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "text": "跟同事因为代码风格吵起来了，你？",
+    "options": [
+      {
+        "label": "A",
+        "text": "列文档、举案例、讲清楚谁的写法更合理",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "你说的都对，干完事最要紧",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "算了，吃饭去吧这事明天再说",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "text": "你希望生活是？",
+    "options": [
+      {
+        "label": "A",
+        "text": "按部就班、稳稳向前",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "可以不留痕迹地从世界上消失掉",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "每天都有新的问题和解决方案",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "text": "周末在家宅三天没出门，你？",
+    "options": [
+      {
+        "label": "A",
+        "text": "已经憋疯了，必须出去找人",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "为什么我周末有3天，不是1天吗？",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "希望永远都这样",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "text": "你读书的方式？",
+    "options": [
+      {
+        "label": "A",
+        "text": "从头到尾，做读书笔记",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "（流口水",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "直接翻结论，前面看情况回看",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "text": "评价一个产品/方案你更看重？",
+    "options": [
+      {
+        "label": "A",
+        "text": "有钱赚吗，多少能分我手上",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "嘿嘿我要让所有人赤石",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "能不能真正改善用户的生活",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "text": "你更想被朋友形容为？",
+    "options": [
+      {
+        "label": "A",
+        "text": "这哥们特别靠谱，说啥是啥",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "神经病，很难想象这个人脑子里装的啥",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "这哥们太会玩了，跟他走不无聊",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "text": "兄弟突然甩来一句\"晚上出来喝一杯？\"你？",
+    "options": [
+      {
+        "label": "A",
+        "text": "好嘞，定哪儿？",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "看今天状态和明天有没有事",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "今天不行，下次吧（下次也没有）",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "text": "你更关注？",
+    "options": [
+      {
+        "label": "A",
+        "text": "眼前的事，今年KPI是什么",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "毒蛇会不会被毒蛇的毒毒死",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "五年十年后行业会变成什么样",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "text": "你心目中好老板的样子？",
+    "options": [
+      {
+        "label": "A",
+        "text": "目标明确、决策果断、不废话",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "我是老板",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "能看见你的努力、愿意罩你",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "text": "公司突然通知明天要出差，你的反应？",
+    "options": [
+      {
+        "label": "A",
+        "text": "先查车票、酒店、当地天气",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "报销吗，和谁一起出差",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "明早起来再收拾，丢啥买啥",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "text": "你的微信朋友列表？",
+    "options": [
+      {
+        "label": "A",
+        "text": "上百个，各种群、各种好友",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "微信只是支付和实名认证的工具，没用过",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "精挑细选，其他人直接删除",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "text": "你做汇报/PPT更注重？",
+    "options": [
+      {
+        "label": "A",
+        "text": "数据图表、硬核事实",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "加私货，一定要自己玩的爽",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "故事线、概念框架、金句",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "text": "你最欣赏的队友品质？",
+    "options": [
+      {
+        "label": "A",
+        "text": "技术牛、效率高、不拖后腿",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "唐，有娱乐效果",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "靠谱、讲义气、能在任何时候救我",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "text": "你出门前一般？",
+    "options": [
+      {
+        "label": "A",
+        "text": "钥匙、钱包、身份证都检查一遍",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "能不出门吗",
+        "dimension": "I"
+      },
+      {
+        "label": "C",
+        "text": "抓起手机就走，丢了再说",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "text": "新工作/新学校第一天你？",
+    "options": [
+      {
+        "label": "A",
+        "text": "主动找人自我介绍，加一堆微信",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "跟身边几个人先聊",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "只希望自己从来没有出过门，这一切都是一个可怕的噩梦",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "text": "你选游戏看重？",
+    "options": [
+      {
+        "label": "A",
+        "text": "玩法成熟、数值平衡、稳定不崩",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "玩法和剧情都要",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "世界观、叙事深度、艺术表达",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "text": "你哥们做了个你觉得很离谱的决定（比如在大街上和对象表白）？",
+    "options": [
+      {
+        "label": "A",
+        "text": "把所有风险摆在他面前，一条条分析",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "掏出手机准备记录精彩瞬间",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "尊重他的选择，别把自己弄得像他爸",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "text": "某一天，高级智能俱乐部因为人类开发出了通用智能邀请人类加入新的宇宙，从此一切都没有任何意义，现在的计划，未来一切都没有确定的可能，你会？",
+    "options": [
+      {
+        "label": "A",
+        "text": "不太舒服，我一定要需要叙事，需要意义",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "打个∠先",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "庆幸自己早早向AI大人投降，愉快加入新的世界",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "text": "你发朋友圈/动态的频率？",
+    "options": [
+      {
+        "label": "A",
+        "text": "我觉得全世界都应该听到我的声音，每天都要发",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "想发就发，不强求",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "从来没发过，或者只发过一条，证明自己没有屏蔽任何人",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "text": "你花钱的态度？",
+    "options": [
+      {
+        "label": "A",
+        "text": "精打细算，一分钱都不浪费",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "大头省着花，小头看心情",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "只要欠银行的钱够多我连监狱都很难进吧（",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "text": "团队决策你更倾向？",
+    "options": [
+      {
+        "label": "A",
+        "text": "看数据说话，别谈感情",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "我只是来混日子的，谁给我钱多我听谁",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "每个人意见都考虑进去",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "text": "你理想的假期旅行？",
+    "options": [
+      {
+        "label": "A",
+        "text": "攻略做满，景点一个都不能漏",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "只要和你玩的好的朋友在一起，就是最好的旅行",
+        "dimension": "E"
+      },
+      {
+        "label": "C",
+        "text": "全国音游地图/网吧打卡，我开心最重要",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "text": "聚会结束你通常？",
+    "options": [
+      {
+        "label": "A",
+        "text": "还想续摊，KTV走起",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "喝断片了，不记得后面发生了什么",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "我也要参加吗（",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "text": "你做笔记的习惯？",
+    "options": [
+      {
+        "label": "A",
+        "text": "关键信息全记下来，工整",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "不记笔记，脑子够用",
+        "dimension": "J"
+      },
+      {
+        "label": "C",
+        "text": "画思维导图、抓关键词",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "text": "跳槽/选工作你最看重？",
+    "options": [
+      {
+        "label": "A",
+        "text": "薪资、股票、title",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "稳定，稳定，还是稳定",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "做的事有没有意思、团队合不合拍",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "text": "你的衣柜？",
+    "options": [
+      {
+        "label": "A",
+        "text": "按颜色/季节分类挂好",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "大致分开，不太讲究",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "随机就是最自然的排布方式",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "text": "你更习惯的沟通方式？",
+    "options": [
+      {
+        "label": "A",
+        "text": "打电话/面聊，说清楚最快",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "不沟通，我只是一个石墩子",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "能文字绝不语音，能发消息绝不打电话",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "text": "你对历史感兴趣的点？",
+    "options": [
+      {
+        "label": "A",
+        "text": "具体年份、关键人物、重大事件",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "对历史不感兴趣，我只是个石墩子",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "背后的规律和文明演进",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "text": "跟甲方/客户谈判你更在意？",
+    "options": [
+      {
+        "label": "A",
+        "text": "争取最有利的条款",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "什么时候下班",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "双方都舒服，长期合作下去",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "text": "你手机里的日历/TODO？",
+    "options": [
+      {
+        "label": "A",
+        "text": "每天任务清单都排好，Notion+苹果日历双开",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "TODO是啥？",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "我脑子够用，记啥记",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "text": "长途高铁/开车你更愿意？",
+    "options": [
+      {
+        "label": "A",
+        "text": "叫个朋友同行，一路聊嗨",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "有聊的就聊，没有就听歌",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "戴耳机一个人发呆，最爽",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "text": "你更擅长/喜欢的学科？",
+    "options": [
+      {
+        "label": "A",
+        "text": "数学、物理、工程这类硬核的",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "提示词工程",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "哲学、文学、社科这种思辨的",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "text": "你觉得规则和人情？",
+    "options": [
+      {
+        "label": "A",
+        "text": "规则就是规则，别谈关系",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "都是束缚我飞升的枷锁罢了，哪个破坏最小就放弃哪个",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "人是活的，规则也得看情况",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "text": "你做一道新菜？",
+    "options": [
+      {
+        "label": "A",
+        "text": "严格按菜谱，使用精确的电子秤衡量材料质量，使用标准量筒计算液体",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "我不做菜，不感兴趣",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "面多了加水，水多了加面",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "text": "开会时你一般？",
+    "options": [
+      {
+        "label": "A",
+        "text": "积极发言，有啥说啥",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "（昏睡过去",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "会后单独找人聊",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "text": "你挑电影/剧？",
+    "options": [
+      {
+        "label": "A",
+        "text": "豆瓣评分+烂番茄+IMDb三件套",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "他们/她们会做羞羞的事情吗（",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "预告片够炸就冲",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "text": "有一天你醒来，世界上所有的人类都消失了，现在街上只有你一个人，好在时间似乎静止了，食物不会腐坏，无人的发电站，净水，网络，能源都在自然的产生，只是没有任何一个人，你该做什么？",
+    "options": [
+      {
+        "label": "A",
+        "text": "没意思，我在乎的人都消失不见了，直接自杀",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "我是石墩子，这和我没有关系",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "天哪梦想的生活",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "text": "你对日常习惯的态度？",
+    "options": [
+      {
+        "label": "A",
+        "text": "有固定的作息和规律让我安心",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "除了吃饭睡觉没有啥坚持的习惯，没有刻意培养",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "每天一样就是慢性死亡",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "text": "你压力大时？",
+    "options": [
+      {
+        "label": "A",
+        "text": "拉兄弟喝酒撸串倾诉一通",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "我要让这个世界和我陪葬",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "关灯戴耳机一个人呆着",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "text": "你写文案/聊天的风格？",
+    "options": [
+      {
+        "label": "A",
+        "text": "准确、严谨、条理分明",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "最小化表达，仅作必须的沟通",
+        "dimension": "I"
+      },
+      {
+        "label": "C",
+        "text": "比喻抽象梗满天飞",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "text": "你最想听到哪句夸奖？",
+    "options": [
+      {
+        "label": "A",
+        "text": "你真牛，这事交给你我放心",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "杂鱼~杂鱼~",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "跟你待着总有种莫名奇妙的安心",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "text": "接到新项目你？",
+    "options": [
+      {
+        "label": "A",
+        "text": "像是产品经理那样，先列甘特图、分阶段、定里程碑",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "想个大致方向就开干",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "先干起来再说，方案边做边想",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "text": "你理想的办公环境？",
+    "options": [
+      {
+        "label": "A",
+        "text": "开放工位，想聊随时聊",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "在家办公",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "独立小房间，别来找我",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "text": "你看新闻/财经更关注？",
+    "options": [
+      {
+        "label": "A",
+        "text": "具体发生了什么事",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "事件发展和后续影响",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "背后的趋势和底层逻辑",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "text": "你更敬佩哪种人？",
+    "options": [
+      {
+        "label": "A",
+        "text": "在原则问题上绝不妥协的人",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "能够自由行走于世间，从不被任何规则束腹的人",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "总能理解每个普通人难处的人",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "text": "你的书桌/电脑桌面？",
+    "options": [
+      {
+        "label": "A",
+        "text": "每样东西都有固定位置",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "基本整齐，偶尔堆一下",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "考古现场，我可能也不知道每样东西在哪",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "text": "你喜欢的演讲/直播？",
+    "options": [
+      {
+        "label": "A",
+        "text": "节奏快、互动多、氛围炸",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "和我的观点一致的",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "干货深度、能引发思考",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "text": "你对新工具/新方法的态度？",
+    "options": [
+      {
+        "label": "A",
+        "text": "等别人踩完坑再上",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "我已经老了，阿姨/叔叔已经跟不上了",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "第一时间试，失败了也算经验",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "text": "团队矛盾你更倾向？",
+    "options": [
+      {
+        "label": "A",
+        "text": "直接找到问题根源、当面解决",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "解决问题的同时安抚情绪",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "先把各方情绪照顾好再说事",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "text": "原本约好的局临时取消？",
+    "options": [
+      {
+        "label": "A",
+        "text": "不太舒服，希望早点通知",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "我来把剩下的办了，今天谁都不许走（大声",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "无所谓，正好可以躺尸",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "text": "你的生日希望怎么过？",
+    "options": [
+      {
+        "label": "A",
+        "text": "包场办趴，兄弟姐妹全到",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "几个好哥们吃顿好的",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "一个人吃自己喜欢的就够了",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "text": "你看一款游戏CG/艺术作品更关注？",
+    "options": [
+      {
+        "label": "A",
+        "text": "建模、光影、技法到不到位",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "涩涩！涩涩！",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "传达的意境和整体氛围",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "text": "你觉得好的规则应该？",
+    "options": [
+      {
+        "label": "A",
+        "text": "一视同仁、铁面无私",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "有利于我，其他无所谓",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "考虑具体处境和人情",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "text": "你听歌的方式？",
+    "options": [
+      {
+        "label": "A",
+        "text": "歌单循环，不换曲",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "随机个人歌单循环",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "永远随机，惊喜才有意思",
+        "dimension": "P"
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "text": "你更喜欢哪种社交方式？",
+    "options": [
+      {
+        "label": "A",
+        "text": "线下见面才有真实感",
+        "dimension": "E"
+      },
+      {
+        "label": "B",
+        "text": "可以不社交吗？",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "隔着屏幕打字最舒服",
+        "dimension": "I"
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "text": "你对\"说出口的话\"的态度？",
+    "options": [
+      {
+        "label": "A",
+        "text": "说了就是说了，必须做到",
+        "dimension": "S"
+      },
+      {
+        "label": "B",
+        "text": "🎶就算说了也是谎。没差，我想都一样吧……",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "视情况调整，别绑死自己",
+        "dimension": "N"
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "text": "你觉得这个世界缺啥？",
+    "options": [
+      {
+        "label": "A",
+        "text": "更多理性思考和专业精神",
+        "dimension": "T"
+      },
+      {
+        "label": "B",
+        "text": "工作，实习，博士生名额。",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "更多温暖和同理心",
+        "dimension": "F"
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "text": "面对选择时你？",
+    "options": [
+      {
+        "label": "A",
+        "text": "几分钟内就决定了，别墨迹",
+        "dimension": "J"
+      },
+      {
+        "label": "B",
+        "text": "想一下，一般几天就决定了",
+        "dimension": "X"
+      },
+      {
+        "label": "C",
+        "text": "保持开放，能拖就拖",
+        "dimension": "P"
+      }
+    ]
+  }
 ]
