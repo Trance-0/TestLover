@@ -1,12 +1,21 @@
 "use client";
 
 import { useState, useEffect, useMemo, useCallback } from "react";
-import allQuestions from "@/data/questions.json";
+import questionsZh from "@/data/questions.json";
+import questionsEn from "@/data/questions.en.json";
+import questionsJa from "@/data/questions.ja.json";
+import { UI, LANG_NAMES, type Lang } from "@/data/i18n";
 
 type Question = {
   id: number;
   text: string;
   options: { label: string; text: string; dimension: string }[];
+};
+
+const QUESTION_BANKS: Record<Lang, Question[]> = {
+  zh: questionsZh as Question[],
+  en: questionsEn as Question[],
+  ja: questionsJa as Question[],
 };
 
 type Phase = "welcome" | "testing" | "loading" | "result" | "bonus-loading" | "bonus";
@@ -54,20 +63,11 @@ function ProgressBar({
   );
 }
 
-function LoadingAnimation({ onComplete }: { onComplete: () => void }) {
+function LoadingAnimation({ onComplete, lang }: { onComplete: () => void; lang: Lang }) {
   const [step, setStep] = useState(0);
   const [progressValue, setProgressValue] = useState(0);
-
-  const loadingTexts = useMemo(
-    () => [
-      "正在分析你的选择...",
-      "解读人格维度中...",
-      "匹配性格模型...",
-      "生成专属报告...",
-      "即将揭晓结果！",
-    ],
-    []
-  );
+  const t = UI[lang];
+  const loadingTexts = t.loadingTexts;
 
   useEffect(() => {
     const totalDuration = 5000;
@@ -126,7 +126,7 @@ function LoadingAnimation({ onComplete }: { onComplete: () => void }) {
       >
         {loadingTexts[step]}
       </p>
-      <p className="text-white/60 text-sm mb-8">请稍候，AI 正在深度分析中</p>
+      <p className="text-white/60 text-sm mb-8">{t.loadingSubtitle}</p>
 
       {/* Progress bar */}
       <div className="w-full max-w-xs">
@@ -149,11 +149,8 @@ function LoadingAnimation({ onComplete }: { onComplete: () => void }) {
   );
 }
 
-function formatTime(seconds: number): string {
-  const m = Math.floor(seconds / 60);
-  const s = seconds % 60;
-  if (m > 0) return `${m}分${s}秒`;
-  return `${s}秒`;
+function stripTrailingPunctuation(s: string): string {
+  return s.replace(/[：？，。、?.,:!！]+$/g, "");
 }
 
 function ResultPage({
@@ -162,15 +159,18 @@ function ResultPage({
   answers,
   questions,
   elapsedSeconds,
+  lang,
 }: {
   matchDegree: number;
   onRestart: () => void;
   answers: Record<number, string>;
   questions: Question[];
   elapsedSeconds: number;
+  lang: Lang;
 }) {
   const [showContent, setShowContent] = useState(false);
   const [detailOpen, setDetailOpen] = useState(false);
+  const t = UI[lang];
 
   useEffect(() => {
     const timer = setTimeout(() => setShowContent(true), 200);
@@ -179,24 +179,22 @@ function ResultPage({
 
   const answeredCount = Object.keys(answers).length;
 
-  // Build inference list from answered questions
   const inferences = questions
     .filter((q) => answers[q.id])
     .map((q) => {
       const chosen = q.options.find((o) => o.dimension === answers[q.id]);
-      // Strip trailing punctuation from question stem for natural reading
-      const stem = q.text.replace(/[：？，。、]+$/g, "").replace(/^你/g, "");
-      return `你是一个在「${stem}」的时候会「${chosen?.text}」的人`;
+      const stem = stripTrailingPunctuation(q.text);
+      return t.inferenceTemplate(stem, chosen?.text ?? "");
     });
 
   const handleShare = () => {
-    const text = `我刚完成了 MBTI 性格测试，人格匹配度 ${matchDegree.toFixed(1)}%！来测测你的吧 👉`;
+    const text = t.shareText(matchDegree.toFixed(1));
     const url = `https://test.trance-0.com`;
     if (navigator.share) {
-      navigator.share({ title: "MBTI 性格测试", text, url }).catch(() => {});
+      navigator.share({ title: t.siteTitle, text, url }).catch(() => {});
     } else {
       navigator.clipboard.writeText(`${text} ${url}`).then(() => {
-        alert("链接已复制到剪贴板！");
+        alert(t.shareCopied);
       });
     }
   };
@@ -211,7 +209,7 @@ function ResultPage({
             style={{ animationDelay: "0s" }}
           >
             <div className="bg-[var(--primary)] text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
-              测试报告
+              {t.reportBadge}
             </div>
           </div>
 
@@ -223,7 +221,7 @@ function ResultPage({
             <div className="text-center mb-6">
               <div className="text-6xl mb-4">🧠</div>
               <h2 className="text-2xl font-black text-[var(--primary)] mb-2">
-                测试结果
+                {t.reportTitle}
               </h2>
               <div className="w-16 h-1 bg-[var(--primary)] mx-auto rounded-full" />
             </div>
@@ -231,7 +229,7 @@ function ResultPage({
             {/* Match degree display */}
             <div className="bg-[#f5f0ff] rounded-2xl p-5 mb-6">
               <div className="flex justify-between items-center mb-2">
-                <span className="text-sm text-gray-600">人格匹配度</span>
+                <span className="text-sm text-gray-600">{t.matchDegree}</span>
                 <span className="text-lg font-black text-[var(--primary)]">
                   {matchDegree.toFixed(1)}%
                 </span>
@@ -247,7 +245,7 @@ function ResultPage({
             {/* Report text */}
             <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-5 border border-amber-100">
               <p className="text-lg font-bold text-center text-gray-800 leading-relaxed">
-                「 你是一个很爱做题的人。 」
+                「 {t.conclusion} 」
               </p>
             </div>
           </div>
@@ -259,14 +257,14 @@ function ResultPage({
           >
             <div className="bg-white rounded-2xl p-4 text-center shadow-md">
               <div className="text-2xl mb-1">⏱️</div>
-              <div className="text-xs text-gray-500">消耗时间</div>
+              <div className="text-xs text-gray-500">{t.timeSpent}</div>
               <div className="text-lg font-black text-[var(--primary)]">
-                {formatTime(elapsedSeconds)}
+                {t.formatTime(elapsedSeconds)}
               </div>
             </div>
             <div className="bg-white rounded-2xl p-4 text-center shadow-md">
               <div className="text-2xl mb-1">📝</div>
-              <div className="text-xs text-gray-500">完成题目</div>
+              <div className="text-xs text-gray-500">{t.completedQuestions}</div>
               <div className="text-lg font-black text-[var(--primary)]">
                 {answeredCount}
               </div>
@@ -282,7 +280,7 @@ function ResultPage({
               onClick={() => setDetailOpen(!detailOpen)}
               className="w-full bg-white rounded-2xl p-4 shadow-md flex items-center justify-between text-sm font-medium text-gray-700 active:scale-[0.98] transition-transform"
             >
-              <span>查看详细推论 ({inferences.length}条)</span>
+              <span>{t.viewInferences(inferences.length)}</span>
               <svg
                 className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${detailOpen ? "rotate-180" : ""}`}
                 fill="none"
@@ -317,7 +315,7 @@ function ResultPage({
             className="animate-fade-in-up w-full max-w-sm bg-white border-2 border-[var(--primary)] text-[var(--primary)] py-4 rounded-2xl font-bold text-lg shadow-md active:scale-95 transition-transform mb-3"
             style={{ animationDelay: "0.6s" }}
           >
-            分享给好友
+            {t.shareButton}
           </button>
 
           {/* Restart button */}
@@ -326,14 +324,14 @@ function ResultPage({
             className="animate-fade-in-up w-full max-w-sm bg-[var(--primary)] text-white py-4 rounded-2xl font-bold text-lg shadow-lg active:scale-95 transition-transform"
             style={{ animationDelay: "0.7s" }}
           >
-            再测一次
+            {t.restartButton}
           </button>
 
           <p
             className="animate-fade-in-up text-xs text-gray-400 mt-4 text-center"
             style={{ animationDelay: "0.8s" }}
           >
-            本测试仅供娱乐，结果不代表专业心理评估
+            {t.disclaimer}
           </p>
         </>
       )}
@@ -382,15 +380,18 @@ function BonusResultPage({
   answers,
   questions,
   elapsedSeconds,
+  lang,
 }: {
   matchDegree: number;
   onRestart: () => void;
   answers: Record<number, string>;
   questions: Question[];
   elapsedSeconds: number;
+  lang: Lang;
 }) {
   const [showContent, setShowContent] = useState(false);
   const [detailOpen, setDetailOpen] = useState(false);
+  const t = UI[lang];
 
   useEffect(() => {
     const timer = setTimeout(() => setShowContent(true), 200);
@@ -403,18 +404,18 @@ function BonusResultPage({
     .filter((q) => answers[q.id])
     .map((q) => {
       const chosen = q.options.find((o) => o.dimension === answers[q.id]);
-      const stem = q.text.replace(/[：？，。、]+$/g, "").replace(/^你/g, "");
-      return `你是一个在「${stem}」的时候会「${chosen?.text}」的人`;
+      const stem = stripTrailingPunctuation(q.text);
+      return t.inferenceTemplate(stem, chosen?.text ?? "");
     });
 
   const handleShare = () => {
-    const text = `我完成了全部100道 MBTI 性格测试！人格匹配度 ${matchDegree.toFixed(1)}%！来试试你能做完吗 👉`;
+    const text = t.shareTextBonus(matchDegree.toFixed(1));
     const url = `https://test.trance-0.com`;
     if (navigator.share) {
-      navigator.share({ title: "MBTI 性格测试", text, url }).catch(() => {});
+      navigator.share({ title: t.siteTitle, text, url }).catch(() => {});
     } else {
       navigator.clipboard.writeText(`${text} ${url}`).then(() => {
-        alert("链接已复制到剪贴板！");
+        alert(t.shareCopied);
       });
     }
   };
@@ -430,7 +431,7 @@ function BonusResultPage({
             style={{ animationDelay: "0s" }}
           >
             <div className="bg-gradient-to-r from-amber-500 to-orange-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
-              隐藏成就解锁！
+              {t.bonusBadge}
             </div>
           </div>
 
@@ -442,7 +443,7 @@ function BonusResultPage({
             <div className="text-center mb-6">
               <div className="text-6xl mb-4">🏆</div>
               <h2 className="text-2xl font-black text-[var(--primary)] mb-2">
-                满分成就
+                {t.bonusTitle}
               </h2>
               <div className="w-16 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto rounded-full" />
             </div>
@@ -450,7 +451,7 @@ function BonusResultPage({
             {/* Match degree display */}
             <div className="bg-[#f5f0ff] rounded-2xl p-5 mb-6">
               <div className="flex justify-between items-center mb-2">
-                <span className="text-sm text-gray-600">人格匹配度</span>
+                <span className="text-sm text-gray-600">{t.matchDegree}</span>
                 <span className="text-lg font-black text-[var(--primary)]">
                   {matchDegree.toFixed(1)}%
                 </span>
@@ -466,7 +467,7 @@ function BonusResultPage({
             {/* Report text */}
             <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-5 border border-amber-200">
               <p className="text-lg font-bold text-center text-gray-800 leading-relaxed">
-                「 你是一个特别喜欢做题的人。 」
+                「 {t.bonusConclusion} 」
               </p>
             </div>
           </div>
@@ -478,14 +479,14 @@ function BonusResultPage({
           >
             <div className="bg-white rounded-2xl p-4 text-center shadow-md">
               <div className="text-2xl mb-1">⏱️</div>
-              <div className="text-xs text-gray-500">消耗时间</div>
+              <div className="text-xs text-gray-500">{t.timeSpent}</div>
               <div className="text-lg font-black text-[var(--primary)]">
-                {formatTime(elapsedSeconds)}
+                {t.formatTime(elapsedSeconds)}
               </div>
             </div>
             <div className="bg-white rounded-2xl p-4 text-center shadow-md">
               <div className="text-2xl mb-1">📝</div>
-              <div className="text-xs text-gray-500">完成题目</div>
+              <div className="text-xs text-gray-500">{t.completedQuestions}</div>
               <div className="text-lg font-black text-[var(--primary)]">
                 {answeredCount}
               </div>
@@ -501,7 +502,7 @@ function BonusResultPage({
               onClick={() => setDetailOpen(!detailOpen)}
               className="w-full bg-white rounded-2xl p-4 shadow-md flex items-center justify-between text-sm font-medium text-gray-700 active:scale-[0.98] transition-transform"
             >
-              <span>查看详细推论 ({inferences.length}条)</span>
+              <span>{t.viewInferences(inferences.length)}</span>
               <svg
                 className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${detailOpen ? "rotate-180" : ""}`}
                 fill="none"
@@ -536,7 +537,7 @@ function BonusResultPage({
             className="animate-fade-in-up w-full max-w-sm bg-white border-2 border-[var(--primary)] text-[var(--primary)] py-4 rounded-2xl font-bold text-lg shadow-md active:scale-95 transition-transform mb-3"
             style={{ animationDelay: "0.6s" }}
           >
-            分享给好友
+            {t.shareButton}
           </button>
 
           {/* Restart button */}
@@ -545,14 +546,14 @@ function BonusResultPage({
             className="animate-fade-in-up w-full max-w-sm bg-[var(--primary)] text-white py-4 rounded-2xl font-bold text-lg shadow-lg active:scale-95 transition-transform"
             style={{ animationDelay: "0.7s" }}
           >
-            再测一次
+            {t.restartButton}
           </button>
 
           <p
             className="animate-fade-in-up text-xs text-gray-400 mt-4 text-center"
             style={{ animationDelay: "0.8s" }}
           >
-            本测试仅供娱乐，结果不代表专业心理评估
+            {t.disclaimer}
           </p>
         </>
       )}
@@ -568,11 +569,14 @@ export default function Home() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [questionKey, setQuestionKey] = useState(0);
   const [startTime, setStartTime] = useState(0);
+  const [lang, setLang] = useState<Lang>("zh");
+
+  const t = UI[lang];
 
   const questions: Question[] = useMemo(
-    () => shuffleArray(allQuestions as Question[]),
+    () => shuffleArray(QUESTION_BANKS[lang]),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [questionKey]
+    [questionKey, lang]
   );
 
   const totalQuestions = 100;
@@ -653,34 +657,52 @@ export default function Home() {
         <div className="animate-fade-in-up text-center">
           <div className="text-7xl mb-6">🔮</div>
           <h1 className="text-3xl font-black text-[var(--primary)] mb-3">
-            最新最热 MBTI 性格测试
+            {t.siteTitle}
           </h1>
-          <p className="text-gray-500 mb-2 text-sm">探索你的真实人格类型</p>
-          <p className="text-gray-400 text-xs mb-10">
-            30 道精选题目 · 约 5 分钟
-          </p>
+          <p className="text-gray-500 mb-2 text-sm">{t.welcomeSubtitle}</p>
+          <p className="text-gray-400 text-xs mb-8">{t.welcomeDescription}</p>
+
+          {/* Language selector */}
+          <div className="mb-8">
+            <div className="text-xs text-gray-400 mb-2">{t.languageLabel}</div>
+            <div className="inline-flex bg-white/70 rounded-full p-1 shadow-sm">
+              {(Object.keys(LANG_NAMES) as Lang[]).map((l) => (
+                <button
+                  key={l}
+                  onClick={() => setLang(l)}
+                  className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
+                    lang === l
+                      ? "bg-[var(--primary)] text-white shadow-md"
+                      : "text-gray-500 hover:text-[var(--primary)]"
+                  }`}
+                >
+                  {LANG_NAMES[l]}
+                </button>
+              ))}
+            </div>
+          </div>
 
           <button
             onClick={handleStart}
             className="w-full max-w-xs bg-[var(--primary)] text-white py-4 rounded-2xl font-bold text-lg shadow-xl shadow-purple-200 active:scale-95 transition-transform"
           >
-            开始测试
+            {t.startButton}
           </button>
 
           <div className="mt-8 flex items-center gap-4 text-xs text-gray-400">
             <div className="flex items-center gap-1">
               <span>📋</span>
-              <span>100 题库</span>
+              <span>{t.featureBank}</span>
             </div>
             <div className="w-1 h-1 bg-gray-300 rounded-full" />
             <div className="flex items-center gap-1">
               <span>🎯</span>
-              <span>随机抽取</span>
+              <span>{t.featureRandom}</span>
             </div>
             <div className="w-1 h-1 bg-gray-300 rounded-full" />
             <div className="flex items-center gap-1">
               <span>🧬</span>
-              <span>4 维分析</span>
+              <span>{t.featureDims}</span>
             </div>
           </div>
 
@@ -693,7 +715,7 @@ export default function Home() {
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
             </svg>
-            <span>喜欢的话给个 Star 吧</span>
+            <span>{t.starRepo}</span>
           </a>
         </div>
       </div>
@@ -702,13 +724,14 @@ export default function Home() {
 
   // Loading animation
   if (phase === "loading") {
-    return <LoadingAnimation onComplete={handleLoadingComplete} />;
+    return <LoadingAnimation onComplete={handleLoadingComplete} lang={lang} />;
   }
 
   // Bonus loading (100 questions done)
   if (phase === "bonus-loading") {
     return (
       <LoadingAnimation
+        lang={lang}
         onComplete={() => {
           setEndTime(Date.now());
           setPhase("bonus");
@@ -726,6 +749,7 @@ export default function Home() {
         answers={answers}
         questions={questions}
         elapsedSeconds={Math.round((endTime - startTime) / 1000)}
+        lang={lang}
       />
     );
   }
@@ -739,6 +763,7 @@ export default function Home() {
         answers={answers}
         questions={questions}
         elapsedSeconds={Math.round((endTime - startTime) / 1000)}
+        lang={lang}
       />
     );
   }
@@ -753,7 +778,7 @@ export default function Home() {
         {/* Main progress */}
         <ProgressBar
           progress={progress}
-          label={`答题进度 ${displayAnswered}/${displayTotal}`}
+          label={t.progressLabel(displayAnswered, displayTotal)}
         />
 
         {/* Match degree bar + submit button - appears after 30 questions */}
@@ -761,14 +786,14 @@ export default function Home() {
           <div className="animate-slide-up">
             <ProgressBar
               progress={matchDegree}
-              label="人格匹配度"
+              label={t.matchLabel}
               color="green"
             />
             <button
               onClick={handleSubmit}
               className="w-full mt-3 bg-[var(--primary)] text-white py-3 rounded-xl font-bold text-base shadow-lg shadow-purple-200 active:scale-95 transition-transform"
             >
-              查看测试结果 →
+              {t.submitButton}
             </button>
           </div>
         )}
@@ -794,10 +819,10 @@ export default function Home() {
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            <span>上一题</span>
+            <span>{t.prevQuestion}</span>
           </button>
           <span className="bg-[var(--primary)]/10 text-[var(--primary)] text-xs font-bold px-3 py-1 rounded-full">
-            第 {currentIndex + 1} / {displayTotal} 题
+            {t.questionBadge(currentIndex + 1, displayTotal)}
           </span>
           <button
             onClick={() => {
@@ -817,7 +842,7 @@ export default function Home() {
             }
             className="flex items-center gap-1 text-sm font-medium text-gray-600 disabled:text-gray-300 active:scale-95 transition-transform"
           >
-            <span>下一题</span>
+            <span>{t.nextQuestion}</span>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
